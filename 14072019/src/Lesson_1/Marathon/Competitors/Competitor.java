@@ -1,4 +1,4 @@
-package Lesson_1.Marathon.Athlete;
+package Lesson_1.Marathon.Competitors;
 
 public interface Competitor {
     void run(int dist);

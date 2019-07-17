@@ -1,4 +1,4 @@
-package Lesson_1.Marathon.Athlete;
+package Lesson_1.Marathon.Competitors;
 
 public class Animal implements Competitor {
     String type;
@@ -29,7 +29,7 @@ public class Animal implements Competitor {
         if (dist <= maxRunDistance) {
             System.out.println(type + " " + name + " хорошо справился с кроссом");
         } else {
-            System.out.println(type + " " + name + " не справился с кроссом");
+            System.out.println(type + " " + name + " не справился с кроссом и сошел с дистанции");
             onDistance = false;
         }
     }
@@ -39,7 +39,7 @@ public class Animal implements Competitor {
         if (height <= maxJumpHeight) {
             System.out.println(type + " " + name + " удачно перепрыгнул через стену");
         } else {
-            System.out.println(type + " " + name + " не смог перепрыгнуть стену");
+            System.out.println(type + " " + name + " не смог перепрыгнуть стену и сошел с дистанции");
             onDistance = false;
         }
     }
@@ -47,20 +47,22 @@ public class Animal implements Competitor {
     @Override
     public void swim(int dist) {
         if (maxSwimDistance == 0) {
-            System.out.println(type + " " + name + " не умеет плавать");
+            System.out.println(type + " " + name + " не умеет плавать и сошел с дистанции");
             onDistance = false;
             return;
         }
         if (dist <= maxSwimDistance) {
             System.out.println(type + " " + name + " отлично проплыл");
         } else {
-            System.out.println(type + " " + name + " не смог проплыть");
+            System.out.println(type + " " + name + " не смог проплыть и сошел с дистанции");
             onDistance = false;
         }
     }
 
     @Override
     public void info() {
-        System.out.println(type + " " + name + " - " + onDistance);
+        if (onDistance)
+        System.out.println(type + " " + name + " Успешно справился с дистанцией  ");
+        else System.out.println(type + " " + name + " Не добрался до финиша  ");
     }
 }

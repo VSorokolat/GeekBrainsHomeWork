@@ -1,6 +1,6 @@
 package Lesson_1.Marathon.Obstacle;
 
-import Lesson_1.Marathon.Athlete.Competitor;
+import Lesson_1.Marathon.Competitors.Competitor;
 
 public class Water extends Obstacle {
     int length;

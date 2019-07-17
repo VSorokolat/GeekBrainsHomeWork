@@ -1,4 +1,4 @@
-package Lesson_1.Marathon.Athlete;
+package Lesson_1.Marathon.Competitors;
 
 public class Human implements Competitor {
     String name;
@@ -27,7 +27,7 @@ public class Human implements Competitor {
         if (dist <= maxRunDistance) {
             System.out.println(name + " хорошо справился с кроссом");
         } else {
-            System.out.println(name + " не справился с кроссом");
+            System.out.println(name + " не справился с кроссом и сошел с дистанции");
             active = false;
         }
     }
@@ -37,7 +37,7 @@ public class Human implements Competitor {
         if (height <= maxJumpHeight) {
             System.out.println(name + " удачно перепрыгнул через стену");
         } else {
-            System.out.println(name + " не смог перепрыгнуть стену");
+            System.out.println(name + " не смог перепрыгнуть стену и сошел с дистанции");
             active = false;
         }
     }
@@ -47,13 +47,15 @@ public class Human implements Competitor {
         if (dist <= maxSwimDistance) {
             System.out.println(name + " отлично проплыл");
         } else {
-            System.out.println(name + " не смог проплыть");
+            System.out.println(name + " не смог проплыть и сошел с дистанции");
             active = false;
         }
     }
 
     @Override
     public void info() {
-        System.out.println(name + " - " + active);
+        if (active)
+        System.out.println(name + " Успешно справился с дистанцией ");
+        else System.out.println(name + " Не добрался до финиша ");
     }
 }
